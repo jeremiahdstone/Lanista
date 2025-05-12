@@ -27,14 +27,17 @@ public class Gladiator
     //empty constructor used for generating a gladiator with random stats
     public Gladiator()
     {
-        this.name = "Name";
-        this.health = 0;
-        this.dodge = 0;
-        this.speed = 0;
-        this.strength = 0;
-        this.accuracy = 0;
-        this.attackSpeed = 0;
-        this.wingspan = 0;
+        this.name = NameGenerator.generateName();
+
+        int[] stats = Random.generateStats();
+        this.health = stats[0];
+        this.dodge = stats[1];
+        this.speed = stats[2];
+        this.strength = stats[3];
+        this.accuracy = stats[4];
+        this.attackSpeed = stats[5];
+        this.wingspan = stats[6];
+
     }
     
     //parameterized constructor for creating a gladiator with specific stats (for testing)
@@ -49,4 +52,17 @@ public class Gladiator
         this.attackSpeed = attackSpeed;
         this.wingspan = wingspan;
     }
+
+    public override string ToString()
+    {
+        return $"Gladiator: {name}\n" +
+               $"  Health: {health}\n" +
+               $"  Dodge: {dodge}\n" +
+               $"  Speed: {speed}\n" +
+               $"  Strength: {strength}\n" +
+               $"  Accuracy: {accuracy}\n" +
+               $"  Attack Speed: {attackSpeed}\n" +
+               $"  Wingspan: {wingspan}";
+    }
+
 }
