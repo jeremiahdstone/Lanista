@@ -16,10 +16,10 @@ public class Gladiator
     public int attackSpeed { get; set; } // (extra attack speed)
     public int wingspan { get; set; }   // (extra range)
 
-    //GEAR      (add these once we have gear) 
-    //left hand
-    //right hand
-    //helmet
+    //GEAR      (lot to expand on here) 
+    public Handheld leftHand { get; set; }
+    public Handheld righthand { get; set; }
+    //helmet    //all the armors should probably be their own armor subclasses
     //chest
     //legs
 
